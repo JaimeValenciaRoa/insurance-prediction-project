@@ -12,11 +12,11 @@ lasso_model=pickle.load(open('models/insurance_lasso.pkl','rb'))
 standard_scaler=pickle.load(open('models/insurance_scaler.pkl','rb'))
 
 ## Route for home page
-@app.route('/')
+@app.route('/index')
 def index():
     return render_template('index.html')
 
-@app.route('/predictdata',methods=['GET','POST'])
+@app.route('/',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='POST':
         age = int(request.form.get('age'))
