@@ -1,0 +1,42 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Insurance Prediction</h1>
+   
+        <!-- Main Input For Receiving Query to our ML -->
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+         <div class="mb-3">
+            <label> Age </label>  
+            <input type="text" name="age" placeholder="age" required="required" />
+         </div>
+         <div class="mb-3">
+            <label> Sex (0=male,1=female) </label> 
+            <input type="text" name="sex" placeholder="sex" required="required" />
+         </div>
+         <div class="mb-3">
+            <label> bmi </label> 
+            <input type="text" name="bmi" placeholder="bmi" required="required" />
+            
+         </div>
+         <div class="mb-3">
+            <label> children </label> 
+            <input type="text" name="children" placeholder="children" required="required" />
+         </div>
+         <div class="mb-3">
+            <label> smoker (0=no smoker, 1=smoker) </label> 
+            <input type="text" name="smoker" placeholder="smoker" required="required" />
+         </div>
+         <div class="mb-3">
+            <label> region 1=southeast, 2=southwest, 3=northwest, 4=northeast</label> 
+            <input type="text" name="region" placeholder="region" required="required" />
+         </div>
+   
+   
+   
+           <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+       </form>
+    <h2>
+       THE charges prediction is {{result}} to age={{age}}, sex={{sex}}, bmi={{bmi}}, children={{children}}, smoker={{smoker}}, region={{region}}
+    </h2>
+   <body>
+</html>
